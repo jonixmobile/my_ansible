@@ -1,0 +1,16 @@
+# añadir -vv para ver la salida del comando, ansible-playbook -vv command.yml
+---
+- name: Ejecutar comandos
+  hosts: centos1
+  tasks:
+  - name: ejecutar 
+    command: uname -a
+  - name: install pexpect
+    yum: name=pexpect state=latest
+  - name: 
+    expect:
+      command: password test
+      responses:
+        (?i)password: "Password"
+
+ 

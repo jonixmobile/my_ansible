@@ -239,7 +239,10 @@ dist = de distribución
 
 
 opciones command, con shell si permite utilizar caracteres especiales como && ||
-acript - transfiere un script y lo ejecuta
+	-chdir: cambia el directorio en el que está trabajando
+	-execute: puedes especificar el interprete a usar /bin/bash, etc
+ 
+script - transfiere un script y lo ejecuta
 raw - envía comandos sin filtrar por SSH
 expect - ejecuta un comando permitiendo introducir datos interactivamente.
 
