@@ -28,6 +28,12 @@
     - name: copia y extrae
       unarchive: src=/tmp/hosts.tgz dest=/tmp/test
 
+    - name: ejemplo lineinfile para deshabilitar SELINUX
+      lineinfile: dest=/etc/selinux/config regexp="^SELINUX=" line="SELINUX=disabled"
+
+    - name: eliminar una linea de un fichero
+      lineinfile: dest=/etc/hosts state=absent regexp="^192.168.88.4"  
+
 - name: Playbook Copiar2
   hosts: centos2
   remote_user: test
