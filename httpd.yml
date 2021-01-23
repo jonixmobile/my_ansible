@@ -1,0 +1,20 @@
+---
+- name: Actualizar httpd config
+  hosts: centos1
+  tasks:
+  - name: install apache
+    yum: name=httpd state=latest
+
+  - name: iniciar servicio 
+    service: name=httpd state=started
+
+  - name: habilitar servicio
+    service: name=httpd enabled=true
+
+  - name: copia fichero
+    copy: src=/etc/httpd/conf/httpd.conf dest=/etc/httpd/conf/httpd.conf
+    notify: restart_httpd
+
+  handlers:
+    - name: restart_httpd
+      service: name=httpd state=restarted

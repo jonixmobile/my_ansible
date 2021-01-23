@@ -1,0 +1,32 @@
+---
+- name: Playbook Copiar1
+  hosts: produccion:&centos1
+  remote_user: test
+  become: True
+  tasks:
+    - name: Copiar fichero
+      copy: src=/etc/hosts dest=/tmp owner=test group=test mode=0644 backup=yes
+    - name: Propiedades del fichero
+      file: path="/etc/httpd/conf/httpd.conf" backup=yes mode="777" owner="apache" group="apache" 
+    - name: Crear directorio:
+      file: 
+        path: "/opt/program"
+        state: directory
+        owner: root
+        group: root
+        mode: 2755
+    - name: usando stat
+      stat: /etc/passwd
+      register: datos
+
+    - debug: var=datos  
+
+- name: Playbook Copiar2
+  hosts: centos2
+  remote_user: test
+  become: True
+  check_mode: true
+  tasks:
+    - name: Copiar fichero
+      copy: src=/etc/hosts dest=/root 
+
