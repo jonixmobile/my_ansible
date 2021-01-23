@@ -7,19 +7,20 @@
     - name: Copiar fichero
       copy: src=/etc/hosts dest=/tmp owner=test group=test mode=0644 backup=yes
     - name: Propiedades del fichero
-      file: path="/etc/httpd/conf/httpd.conf" backup=yes mode="777" owner="apache" group="apache" 
-    - name: Crear directorio:
+      file: path="/tmp/hosts" backup=yes mode="777" owner="apache" group="apache" 
+
+    - name: Crear directorio
       file: 
         path: "/opt/program"
         state: directory
         owner: root
         group: root
         mode: 2755
-    - name: usando stat
-      stat: /etc/passwd
-      register: datos
+#    - name: usando stat
+#      stat: path=/etc/passwd
+#      register: datos
 
-    - debug: var=datos  
+#    - debug: var=datos  
 
 - name: Playbook Copiar2
   hosts: centos2
