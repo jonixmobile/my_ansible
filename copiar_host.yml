@@ -25,7 +25,8 @@
     - name: Copiar desde remoto
       fetch: src=/etc/httpd/conf/httpd.conf dest=/tmp/httpd_centos1.conf flat=yes
 
-
+    - name: copia y extrae
+      unarchive: src=/tmp/hosts.tgz dest=/tmp/test
 
 - name: Playbook Copiar2
   hosts: centos2
