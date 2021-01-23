@@ -1,4 +1,6 @@
 # añadir -vv para ver la salida del comando, ansible-playbook -vv command.yml
+# requerido para usar expect pip install pexpect==3.3
+
 ---
 - name: Ejecutar comandos
   hosts: centos1
