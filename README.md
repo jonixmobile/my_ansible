@@ -229,3 +229,19 @@ módulo stat para obtener información de un fichero
 
 módulo fetch - obtener un fichero del servidor remoto, interesantre para backups
 
+módulo APT
+name =nombre:version
+upgrade puede actualizar el sistema
+upgrade no/yes/safe/full/dist
+safe = sólo los paquetes que no sean de sistema
+full = todos los paquetes
+dist = de distribución
+
+
+opciones command, con shell si permite utilizar caracteres especiales como && ||
+acript - transfiere un script y lo ejecuta
+raw - envía comandos sin filtrar por SSH
+expect - ejecuta un comando permitiendo introducir datos interactivamente.
+
+
+
