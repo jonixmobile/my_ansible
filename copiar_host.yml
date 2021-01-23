@@ -16,11 +16,16 @@
         owner: root
         group: root
         mode: 2755
-#    - name: usando stat
-#      stat: path=/etc/passwd
-#      register: datos
+    - name: usando stat
+      stat: path=/etc/passwd
+      register: datos
 
-#    - debug: var=datos  
+    - debug: var=datos  
+
+    - name: Copiar desde remoto
+      fetch: src=/etc/httpd/conf/httpd.conf dest=/tmp/httpd_centos1.conf flat=yes
+
+
 
 - name: Playbook Copiar2
   hosts: centos2

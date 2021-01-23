@@ -224,3 +224,8 @@ backup yes/no
 content = "contenido"
 force = yes/no
 owner, group, mode, src = /tmp/file
+
+módulo stat para obtener información de un fichero
+
+módulo fetch - obtener un fichero del servidor remoto, interesantre para backups
+
