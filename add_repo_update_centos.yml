@@ -1,0 +1,15 @@
+---
+- name: Actualizar sistema CentOS
+  hosts: centos1
+  tasks:
+  - name: Actualizar paquetes
+    yum: name='*' state=latest
+
+  - name: instalar paquetes de desarrollo 
+    yum: name="@Development Tools" state=latest
+  - name: Activar EPEL
+    yum_repository:
+      name: epel
+      description: EPEL Repo
+      state: present
+      baseurl: https://download.fedoraproject.org/pub/epel/$releaserver/$basearch/
