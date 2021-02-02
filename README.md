@@ -243,8 +243,19 @@ opciones command, con shell si permite utilizar caracteres especiales como && ||
 	-execute: puedes especificar el interprete a usar /bin/bash, etc
  
 script - transfiere un script y lo ejecuta
+-name:
+ script: /path/script.sh
+ 
 raw - envía comandos sin filtrar por SSH
+-name: 
+ raw: yum install epel-release && yum install nginx
+ 
 expect - ejecuta un comando permitiendo introducir datos interactivamente.
 
+shell
+-name: 
+ shell: uptime >> file.log
+ args:
+   chdir: /tmp
 
 
