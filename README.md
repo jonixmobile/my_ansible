@@ -259,3 +259,26 @@ shell
    chdir: /tmp
 
 
+wait_for: espera a que un puerto o fichero esté disponible, permite un delay antes de ejecutar una tarea.
+
+Módulos notificaciones: destaco
+
+pushbullet - notificaciones a dispositivos
+mqt - para dispositivos IoT
+slack - 
+SNS - del servicio de AWs
+telegram -
+sendgrid - envío de mails usando la API
+nexmo - envío de SMS
+pushover - envío de notificaciones a móviles
+
+Módulo mail:
+subject= "mensaje"
+host=servidor
+port=puerto
+secure=try,starttls,always,never
+username=
+password= 
+to= email@nosolovirtual.com cuenta a la que se envía el mensaje
+body= "servidor x"
+
