@@ -282,3 +282,28 @@ password=
 to= email@nosolovirtual.com cuenta a la que se envía el mensaje
 body= "servidor x"
 
+-name: formateo HDD
+ filesystem:
+   dev: /ect/sdc1
+   fstype: xfs
+   
+-name: deshabilitar firewalld
+ firewalld:
+   state: disabled
+
+-name: nombre y timezone
+ hosts: localhost
+ task:
+   - hostname: name=nombre_maquina
+   - timezone: name="Europe/Madrid"
+
+Conatiners
+Necesita instalar docker-py
+
+-pip: name=docker-py state=latest
+-name: descarga imagen
+ docker_image:
+   name: centos
+   state: present
+
+
